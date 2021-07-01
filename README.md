@@ -18,6 +18,9 @@ https://www.youtube.com/playlist?list=PLcqDmjxt30RvEEN6eUCcSrrH-hKjCT4wt
 (유튜브 광고가 불편하다면 아래 사이트에 가입한 후 해당 사이트에서 들으셔도 됩니다.)  
 https://www.inflearn.com/course/%EB%A0%88%EC%B8%A0%EA%B8%B0%EB%A6%BF-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8#curriculum
 
+[강의 소스코드 링크]
+https://github.com/ZeroCho/es2021-webgame
+
 - 강의는 1.5 ~ 2배속으로 듣는 것을 추천합니다. (1.75배속 추천!)
 - 여유가 있다면 정해진 진도 이후의 강의를 먼저 들어도 괜찮습니다!
 - 5주 동안 들어야 하기 때문에 양이 좀 많습니다... 몰아서 들으시면 힘들어요...ㅠㅠ 꾸준히 들읍시다!
