@@ -60,7 +60,11 @@
 
 - 바뀔 여지가 있는 부분은 '상태(state)'이다
 
-ex) { onClick: () ⇒ { this.setState({ liked: true }) } }
+> { onClick: () ⇒ { this.setState({ liked: true }) } }
+
+- input 태그를 사용할 때 onChange와 같은 메소드를 통해 input 안에 있는 값(상태)를 바꾸어 주어야 한다.
+
+> <input type="number" value = {this.state.value} onChange = { (e) = > { this.setState( { value : e.target.value} ) />
 
 ---
 
@@ -89,3 +93,36 @@ render() {
 ```
 
 위를 JSX ( JS + XML ) 이라 한다
+
+---
+
+## Fragment
+
+- 이전의 React는 컴포넌트들을 div 태그로 감싸주어야 했는데 이는 <React.Fragment></React.Fragment> 태그로 감싸주는 것으로 대체 가능해짐
+
+---
+
+## 함수형 setState
+
+- 현재 상태와 이전 상태를 구분하기 위해서 setState 함수에서 상태를 반환하기도 한다
+
+```jsx
+this.setState((prevState) ⇒ {
+	return {
+		result: '정답: ' + prevState.value,
+	};
+});
+```
+
+---
+
+## ref
+
+- DOM에 직접 접근하고 싶을 때 ref 속성을 이용
+
+ex)
+
+```jsx
+input123;         // 클래스에 선언
+<input ref={(c) => { this.input123 = c; }} />
+```
