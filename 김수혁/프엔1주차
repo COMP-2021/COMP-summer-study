@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>구구단</title> 
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class GuGuDan extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    first: Math.ceil(Math.random() * 9),
+                    second: Math.ceil(Math.random() * 9),
+                    value: '',  //입력값
+                    result: '', //결과값
+                };
+            }   
+
+            onSubmit = (e) =>{
+                        e.preventDefault();
+                        if(parseInt(this.state.value) ===  this.state.first * this.state.second) {
+                            this.setState((prevState) => {
+                                return{
+                                result: prevState.value + '정답',
+                                first: Math.ceil(Math.random() *9),
+                                second: Math.ceil(Math.random() *9),
+                                value: '',
+                                };
+                            });
+                            this.input.focus();
+                        }
+                        //this.setState({
+                        //    result: this.state.value + '정답',
+                        //        first: Math.ceil(Math.random() *9),
+                        //        second: Math.ceil(Math.random() *9),
+                        //        value: '',
+                        //    });
+                        
+                        else{
+                            this.setState({
+                                result: '땡',
+                                value: '',
+                            });
+                            this.input.focus();
+                        }
+                    };
+
+            onChange = (e) => {
+                        this.setState({value: e.target.value});
+                    };
+                    //함수는 무조건 화살표 함수, function(e)로 하면 this가 달라져버리기 때문에 안된다
+
+                    input;
+
+                    onRefInput = (c) => {this.input = c;};
+
+            render() {
+                return (
+                    <React.Fragment>
+                    <div>{this.state.first} 곱하기 {this.state.second}는?</div>
+                    <form onSubmit={this.onSubmit}>
+                    <input ref = {this.onRefInput} type="number" value={this.state.value} onChange={this.onChange} />
+                        <button type="submit">입력!</button>    
+                    </form>    
+                    <div>{this.state.result}</div>
+                    </React.Fragment>
+                )
+            }
+        }
+        //render가 너무 자주 실행되기 때문에 함수를 render안에 직접 넣지 않고 밖으로 빼준다
+        //함수가 복잡한 경우 시간이 너무 오래걸리기 때문에
+        //ref를 통해서 focus같은 경우는 ref문을 통해서 편하게 사용 가능
+    </script>
+    <script type="text/babel">
+    ReactDOM.render(<GuGuDan />, document.querySelector('#root'));
+    //ReactDOM.render(<div><GuGuDan /><GuGuDan /><GuGuDan /></div>, document.querySelector('#root'));하면 세개가 됨
+    </script>
+    <!--//onChange부분-->
+    <!--inpute.onchange = (e) => {console.log(e.target.value)} 이걸 치면 콘솔로그에 뭘 치는지가 나옴-->
+    <!--화살표 함수는 function이라고 생각하면 편함-->
+</body>
+
+
+
+</html>
