@@ -1,2 +1,43 @@
 2주차 내용이 이해가 잘 안가서 다시 보느라 진도가 밀렸어요.
 다음주까지 3주차 4주차 같이 올릴게요
+.jsx파일
+
+const React=require('react');
+    const {Component}=React;
+
+    function getNumbers(){
+
+    }
+
+    class Numberbaseball{
+        state={
+            result:'',
+            value:'',
+            answer: getNumbers(),
+        };
+
+        onSubmitForm=()=>{
+
+        };
+
+        onChangeInput=()=>{
+
+        };
+
+        render(){
+            return(
+                <>
+                    <h1>{this.state.result}</h1>
+                    <form onSubmit={this.onSubmitForm}>
+                        <input maxLength={4} defaultValue={this.state.value} />
+                    </form>
+                    <div>시도: {this.state.tries.length}</div>
+                    <ul>
+
+                    </ul>
+                </>
+            )
+        }
+    }
+
+    module.exports=Numberbaseball;
