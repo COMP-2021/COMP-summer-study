@@ -95,6 +95,7 @@ let idAgain = Symbol.for("id");
 alert( id === idAgain ); // true
 ```
 
+---
 ## ES6 문법
 
 - 템플릿 문자열
